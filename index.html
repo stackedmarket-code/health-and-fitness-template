@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VitalFit | Premium Fitness Products</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .hero-bg {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        .category-card:hover img {
+            transform: scale(1.05);
+        }
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            background: #4CAF50;
+            cursor: pointer;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header/Navigation -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <a href="#" class="text-2xl font-bold text-green-600">Vital<span class="text-orange-500">Fit</span></a>
+            </div>
+            
+            <nav class="hidden md:flex space-x-8">
+                <a href="#" class="text-gray-800 hover:text-green-600 font-medium">Home</a>
+                <a href="#shop" class="text-gray-800 hover:text-green-600 font-medium">Shop</a>
+                <a href="#about" class="text-gray-800 hover:text-green-600 font-medium">About</a>
+                <a href="#contact" class="text-gray-800 hover:text-green-600 font-medium">Contact</a>
+            </nav>
+            
+            <div class="flex items-center space-x-4">
+                <a href="#" class="text-gray-800 hover:text-green-600"><i class="fas fa-search"></i></a>
+                <a href="#" class="text-gray-800 hover:text-green-600"><i class="fas fa-user"></i></a>
+                <a href="#" class="text-gray-800 hover:text-green-600 relative">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="absolute -top-2 -right-2 bg-orange-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">3</span>
+                </a>
+                <button id="mobile-menu-button" class="md:hidden text-gray-800">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white py-2 px-4 shadow-lg">
+            <a href="#" class="block py-2 text-gray-800 hover:text-green-600">Home</a>
+            <a href="#shop" class="block py-2 text-gray-800 hover:text-green-600">Shop</a>
+            <a href="#about" class="block py-2 text-gray-800 hover:text-green-600">About</a>
+            <a href="#contact" class="block py-2 text-gray-800 hover:text-green-600">Contact</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-bg text-white py-20 md:py-32">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold mb-4">Fuel Your Fitness Journey</h1>
+            <p class="text-xl md:text-2xl mb-8 max-w-2xl mx-auto">Premium supplements, gear & apparel to help you reach your goals</p>
+            <a href="#shop" class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-full inline-block transition duration-300 transform hover:scale-105">Shop Now</a>
+        </div>
+    </section>
+
+    <!-- Featured Categories -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Shop By Category</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <!-- Category 1 -->
+                <div class="category-card overflow-hidden rounded-lg shadow-md bg-white transition duration-300">
+                    <div class="overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1599707367072-cd6ada2bc375?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1473&q=80" alt="Supplements" class="w-full h-48 object-cover transition duration-500">
+                    </div>
+                    <div class="p-4 text-center">
+                        <h3 class="font-bold text-lg mb-2 text-gray-800">Supplements</h3>
+                        <a href="#" class="text-green-600 hover:text-green-800 font-medium">Shop Now</a>
+                    </div>
+                </div>
+                
+                <!-- Category 2 -->
+                <div class="category-card overflow-hidden rounded-lg shadow-md bg-white transition duration-300">
+                    <div class="overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Equipment" class="w-full h-48 object-cover transition duration-500">
+                    </div>
+                    <div class="p-4 text-center">
+                        <h3 class="font-bold text-lg mb-2 text-gray-800">Equipment</h3>
+                        <a href="#" class="text-green-600 hover:text-green-800 font-medium">Shop Now</a>
+                    </div>
+                </div>
+                
+                <!-- Category 3 -->
+                <div class="category-card overflow-hidden rounded-lg shadow-md bg-white transition duration-300">
+                    <div class="overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1542272604-787c3835535d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1526&q=80" alt="Clothing" class="w-full h-48 object-cover transition duration-500">
+                    </div>
+                    <div class="p-4 text-center">
+                        <h3 class="font-bold text-lg mb-2 text-gray-800">Clothing</h3>
+                        <a href="#" class="text-green-600 hover:text-green-800 font-medium">Shop Now</a>
+                    </div>
+                </div>
+                
+                <!-- Category 4 -->
+                <div class="category-card overflow-hidden rounded-lg shadow-md bg-white transition duration-300">
+                    <div class="overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1594737625785-a6cbbd98b239?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" alt="Accessories" class="w-full h-48 object-cover transition duration-500">
+                    </div>
+                    <div class="p-4 text-center">
+                        <h3 class="font-bold text-lg mb-2 text-gray-800">Accessories</h3>
+                        <a href="#" class="text-green-600 hover:text-green-800 font-medium">Shop Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section id="shop" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center mb-8">
+                <h2 class="text-3xl font-bold text-gray-800">Featured Products</h2>
+                <a href="#" class="text-green-600 hover:text-green-800 font-medium">View All</a>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+                <!-- Product 1 -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1599058917212-d750089bc07e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80" alt="Whey Protein" class="w-full h-64 object-cover">
+                        <div class="absolute top-2 right-2 bg-orange-500 text-white text-xs font-bold px-2 py-1 rounded-full">NEW</div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg mb-1 text-gray-800">Premium Whey Protein</h3>
+                        <div class="flex items-center mb-2">
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <span class="text-gray-600 text-sm ml-2">(42)</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold text-green-600">$39.99</span>
+                            <button class="bg-green-600 hover:bg-green-700 text-white px-3 py-1 rounded-full text-sm transition duration-300">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 2 -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Dumbbell Set" class="w-full h-64 object-cover">
+                        <div class="absolute top-2 right-2 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded-full">SALE</div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg mb-1 text-gray-800">Adjustable Dumbbell Set</h3>
+                        <div class="flex items-center mb-2">
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <span class="text-gray-600 text-sm ml-2">(28)</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <span class="font-bold text-green-600">$129.99</span>
+                                <span class="text-gray-500 text-sm line-through ml-2">$149.99</span>
+                            </div>
+                            <button class="bg-green-600 hover:bg-green-700 text-white px-3 py-1 rounded-full text-sm transition duration-300">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 3 -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300">
+                    <img src="https://images.unsplash.com/photo-1542272604-787c3835535d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1526&q=80" alt="Yoga Pants" class="w-full h-64 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg mb-1 text-gray-800">High-Waist Yoga Pants</h3>
+                        <div class="flex items-center mb-2">
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="text-gray-600 text-sm ml-2">(56)</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold text-green-600">$34.99</span>
+                            <button class="bg-green-600 hover:bg-green-700 text-white px-3 py-1 rounded-full text-sm transition duration-300">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 4 -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300">
+                    <img src="https://images.unsplash.com/photo-1594737625785-a6cbbd98b239?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" alt="Fitness Tracker" class="w-full h-64 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg mb-1 text-gray-800">Smart Fitness Tracker</h3>
+                        <div class="flex items-center mb-2">
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <span class="text-gray-600 text-sm ml-2">(37)</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold text-green-600">$59.99</span>
+                            <button class="bg-green-600 hover:bg-green-700 text-white px-3 py-1 rounded-full text-sm transition duration-300">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">What Our Customers Say</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card bg-gray-50 p-6 rounded-lg shadow-sm transition duration-300">
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 mb-4">"The whey protein is amazing! I've tried many brands but this one mixes perfectly and tastes great. My recovery time has improved significantly."</p>
+                    <div class="flex items-center">
+                        <img src="https://randomuser.me/api/portraits/women/43.jpg" alt="Sarah J." class="w-10 h-10 rounded-full mr-3">
+                        <div>
+                            <h4 class="font-bold text-gray-800">Sarah J.</h4>
+                            <p class="text-gray-600 text-sm">Verified Buyer</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card bg-gray-50 p-6 rounded-lg shadow-sm transition duration-300">
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 mb-4">"The adjustable dumbbells saved so much space in my home gym. Quality is top-notch and they're so easy to adjust between sets. Highly recommend!"</p>
+                    <div class="flex items-center">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael T." class="w-10 h-10 rounded-full mr-3">
+                        <div>
+                            <h4 class="font-bold text-gray-800">Michael T.</h4>
+                            <p class="text-gray-600 text-sm">Verified Buyer</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card bg-gray-50 p-6 rounded-lg shadow-sm transition duration-300">
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 mb-4">"These yoga pants are the most comfortable I've ever worn. They stay in place during workouts and look great too. Will definitely buy more colors!"</p>
+                    <div class="flex items-center">
+                        <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Jessica L." class="w-10 h-10 rounded-full mr-3">
+                        <div>
+                            <h4 class="font-bold text-gray-800">Jessica L.</h4>
+                            <p class="text-gray-600 text-sm">Verified Buyer</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="py-16 bg-green-600 text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-4">Join Our Fitness Community</h2>
+            <p class="max-w-2xl mx-auto mb-8">Subscribe to our newsletter for exclusive offers, fitness tips, and new product announcements.</p>
+            
+            <form class="max-w-md mx-auto flex">
+                <input type="email" placeholder="Your email address" class="flex-grow px-4 py-3 rounded-l-lg focus:outline-none text-gray-800">
+                <button type="submit" class="bg-orange-500 hover:bg-orange-600 px-6 py-3 rounded-r-lg font-medium transition duration-300">Subscribe</button>
+            </form>
+            
+            <p class="text-sm mt-4 opacity-80">We respect your privacy. Unsubscribe at any time.</p>
+        </div>
+    </section>
+
+    <!-- About Us -->
+    <section id="about" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-8 md:mb-0 md:pr-8">
+                    <h2 class="text-3xl font-bold mb-6 text-gray-800">Our Story</h2>
+                    <p class="text-gray-700 mb-4">Founded in 2015, VitalFit began with a simple mission: to provide high-quality fitness products that help people achieve their health goals without compromising on quality or performance.</p>
+                    <p class="text-gray-700 mb-4">What started as a small online store has grown into a trusted brand in the fitness community, known for our carefully curated selection of supplements, equipment, and apparel.</p>
+                    <p class="text-gray-700">Every product we carry is tested by our team of fitness enthusiasts to ensure it meets our high standards before we offer it to you.</p>
+                </div>
+                <div class="md:w-1/2">
+                    <img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" alt="Our Team" class="rounded-lg shadow-lg w-full">
+                </div>
+            </div>
+            
+            <div class="mt-16">
+                <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Meet The Team</h2>
+                
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                    <!-- Team Member 1 -->
+                    <div class="text-center">
+                        <img src="https://randomuser.me/api/portraits/men/41.jpg" alt="Alex Johnson" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover">
+                        <h3 class="font-bold text-lg text-gray-800">Alex Johnson</h3>
+                        <p class="text-green-600">Founder & CEO</p>
+                    </div>
+                    
+                    <!-- Team Member 2 -->
+                    <div class="text-center">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sarah Miller" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover">
+                        <h3 class="font-bold text-lg text-gray-800">Sarah Miller</h3>
+                        <p class="text-green-600">Product Specialist</p>
+                    </div>
+                    
+                    <!-- Team Member 3 -->
+                    <div class="text-center">
+                        <img src="https://randomuser.me/api/portraits/men/22.jpg" alt="David Chen" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover">
+                        <h3 class="font-bold text-lg text-gray-800">David Chen</h3>
+                        <p class="text-green-600">Fitness Coach</p>
+                    </div>
+                    
+                    <!-- Team Member 4 -->
+                    <div class="text-center">
+                        <img src="https://randomuser.me/api/portraits/women/33.jpg" alt="Emily Wilson" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover">
+                        <h3 class="font-bold text-lg text-gray-800">Emily Wilson</h3>
+                        <p class="text-green-600">Customer Support</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Get In Touch</h2>
+            
+            <div class="flex flex-col md:flex-row gap-8">
+                <div class="md:w-1/2">
+                    <form class="bg-white p-6 rounded-lg shadow-sm">
+                        <div class="mb-4">
+                            <label for="name" class="block text-gray-700 font-medium mb-2">Name</label>
+                            <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
+                        </div>
+                        <div class="mb-4">
+                            <label for="email" class="block text-gray-700 font-medium mb-2">Email</label>
+                            <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
+                        </div>
+                        <div class="mb-4">
+                            <label for="subject" class="block text-gray-700 font-medium mb-2">Subject</label>
+                            <input type="text" id="subject" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
+                        </div>
+                        <div class="mb-4">
+                            <label for="message" class="block text-gray-700 font-medium mb-2">Message</label>
+                            <textarea id="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"></textarea>
+                        </div>
+                        <button type="submit" class="bg-green-600 hover:bg-green-700 text-white font-medium py-2 px-6 rounded-lg transition duration-300 w-full">Send Message</button>
+                    </form>
+                </div>
+                
+                <div class="md:w-1/2">
+                    <div class="bg-white p-6 rounded-lg shadow-sm h-full">
+                        <h3 class="text-xl font-bold mb-6 text-gray-800">Contact Information</h3>
+                        
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <i class="fas fa-map-marker-alt text-green-600 mt-1 mr-3"></i>
+                                <div>
+                                    <h4 class="font-medium text-gray-800">Address</h4>
+                                    <p class="text-gray-600">123 Fitness Street, Healthville, HV 12345</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <i class="fas fa-phone-alt text-green-600 mt-1 mr-3"></i>
+                                <div>
+                                    <h4 class="font-medium text-gray-800">Phone</h4>
+                                    <p class="text-gray-600">(123) 456-7890</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <i class="fas fa-envelope text-green-600 mt-1 mr-3"></i>
+                                <div>
+                                    <h4 class="font-medium text-gray-800">Email</h4>
+                                    <p class="text-gray-600">info@vitalfit.com</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <i class="fas fa-clock text-green-600 mt-1 mr-3"></i>
+                                <div>
+                                    <h4 class="font-medium text-gray-800">Hours</h4>
+                                    <p class="text-gray-600">Monday - Friday: 9AM - 6PM</p>
+                                    <p class="text-gray-600">Saturday: 10AM - 4PM</p>
+                                    <p class="text-gray-600">Sunday: Closed</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-8">
+                            <h4 class="font-medium text-gray-800 mb-3">Follow Us</h4>
+                            <div class="flex space-x-4">
+                                <a href="#" class="text-gray-600 hover:text-green-600"><i class="fab fa-facebook-f text-xl"></i></a>
+                                <a href="#" class="text-gray-600 hover:text-green-600"><i class="fab fa-twitter text-xl"></i></a>
+                                <a href="#" class="text-gray-600 hover:text-green-600"><i class="fab fa-instagram text-xl"></i></a>
+                                <a href="#" class="text-gray-600 hover:text-green-600"><i class="fab fa-youtube text-xl"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-2xl font-bold text-green-600 mb-4">Vital<span class="text-orange-500">Fit</span></h3>
+                    <p class="text-gray-400">Your trusted source for premium fitness products and supplements to fuel your health journey.</p>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Home</a></li>
+                        <li><a href="#shop" class="text-gray-400 hover:text-white transition duration-300">Shop</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-white transition duration-300">About Us</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white transition duration-300">Contact</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Blog</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Customer Service</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Shipping Policy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Returns & Refunds</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">FAQs</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Privacy Policy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Terms of Service</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Newsletter</h4>
+                    <p class="text-gray-400 mb-4">Subscribe to get updates on new products and special offers.</p>
+                    <form class="flex">
+                        <input type="email" placeholder="Your email" class="px-3 py-2 text-gray-800 rounded-l-lg focus:outline-none w-full">
+                        <button class="bg-orange-500 hover:bg-orange-600 px-4 py-2 rounded-r-lg transition duration-300">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm mb-4 md:mb-0">© 2023 VitalFit. All rights reserved.</p>
+                <div class="flex space-x-6">
+                    <img src="https://via.placeholder.com/40x25?text=VISA" alt="Visa" class="h-6">
+                    <img src="https://via.placeholder.com/40x25?text=MC" alt="Mastercard" class="h-6">
+                    <img src="https://via.placeholder.com/40x25?text=AMEX" alt="American Express" class="h-6">
+                    <img src="https://via.placeholder.com/40x25?text=PP" alt="PayPal" class="h-6">
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Product Detail Modal -->
+    <div id="product-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-lg max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+            <div class="relative">
+                <button id="close-modal" class="absolute top-4 right-4 bg-gray-800 text-white rounded-full w-8 h-8 flex items-center justify-center z-10">
+                    <i class="fas fa-times"></i>
+                </button>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 p-6">
+                    <div class="sticky top-0">
+                        <img id="modal-product-image" src="https://images.unsplash.com/photo-1599058917212-d750089bc07e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80" alt="Product" class="w-full rounded-lg">
+                        
+                        <div class="grid grid-cols-4 gap-2 mt-4">
+                            <img src="https://images.unsplash.com/photo-1599058917212-d750089bc07e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80" alt="Thumbnail" class="cursor-pointer border-2 border-green-500 rounded">
+                            <img src="https://images.unsplash.com/photo-1599707367072-cd6ada2bc375?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1473&q=80" alt="Thumbnail" class="cursor-pointer border-2 border-transparent hover:border-gray-300 rounded">
+                            <img src="https://images.unsplash.com/photo-1599058917212-d750089bc07e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80" alt="Thumbnail" class="cursor-pointer border-2 border-transparent hover:border-gray-300 rounded">
+                            <img src="https://images.unsplash.com/photo-1599707367072-cd6ada2bc375?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1473&q=80" alt="Thumbnail" class="cursor-pointer border-2 border-transparent hover:border-gray-300 rounded">
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h2 id="modal-product-title" class="text-2xl font-bold text-gray-800 mb-2">Premium Whey Protein</h2>
+                        <div class="flex items-center mb-4">
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <span class="text-gray-600 text-sm ml-2">(42 reviews)</span>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <span id="modal-product-price" class="text-3xl font-bold text-green-600">$39.99</span>
+                            <span class="text-gray-500 ml-2">+ Free Shipping</span>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <h3 class="font-bold text-gray-800 mb-2">Description</h3>
+                            <p id="modal-product-description" class="text-gray-700">Our premium whey protein is formulated with the highest quality ingredients to support muscle recovery and growth. Each serving delivers 24g of pure protein with minimal carbs and fat. Perfect for post-workout recovery or as a meal replacement.</p>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <h3 class="font-bold text-gray-800 mb-2">Flavor</h3>
+                            <div class="flex flex-wrap gap-2">
+                                <button class="px-4 py-2 border border-gray-300 rounded-full hover:bg-gray-100 focus:bg-green-100 focus:border-green-500">Chocolate</button>
+                                <button class="px-4 py-2 border border-gray-300 rounded-full hover:bg-gray-100 focus:bg-green-100 focus:border-green-500">Vanilla</button>
+                                <button class="px-4 py-2 border border-gray-300 rounded-full hover:bg-gray-100 focus:bg-green-100 focus:border-green-500">Strawberry</button>
+                                <button class="px-4 py-2 border border-gray-300 rounded-full hover:bg-gray-100 focus:bg-green-100 focus:border-green-500">Cookies & Cream</button>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <h3 class="font-bold text-gray-800 mb-2">Size</h3>
+                            <div class="flex flex-wrap gap-2">
+                                <button class="px-4 py-2 border border-gray-300 rounded-full hover:bg-gray-100 focus:bg-green-100 focus:border-green-500">2 lbs</button>
+                                <button class="px-4 py-2 border border-gray-300 rounded-full hover:bg-gray-100 focus:bg-green-100 focus:border-green-500">5 lbs</button>
+                                <button class="px-4 py-2 border border-gray-300 rounded-full hover:bg-gray-100 focus:bg-green-100 focus:border-green-500">10 lbs</button>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center mb-6">
+                            <div class="flex items-center border border-gray-300 rounded-lg mr-4">
+                                <button class="px-3 py-1 text-xl">-</button>
+                                <span class="px-4 py-1 border-x border-gray-300">1</span>
+                                <button class="px-3 py-1 text-xl">+</button>
+                            </div>
+                            <button class="bg-green-600 hover:bg-green-700 text-white font-medium py-2 px-6 rounded-lg transition duration-300 flex-grow">
+                                Add to Cart - $39.99
+                            </button>
+                        </div>
+                        
+                        <div class="border-t border-gray-200 pt-4">
+                            <div class="flex items-start mb-2">
+                                <i class="fas fa-truck text-green-600 mt-1 mr-3"></i>
+                                <div>
+                                    <h4 class="font-medium text-gray-800">Free Shipping</h4>
+                                    <p class="text-gray-600 text-sm">On all orders over $50</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start mb-2">
+                                <i class="fas fa-undo-alt text-green-600 mt-1 mr-3"></i>
+                                <div>
+                                    <h4 class="font-medium text-gray-800">Easy Returns</h4>
+                                    <p class="text-gray-600 text-sm">30-day satisfaction guarantee</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-headset text-green-600 mt-1 mr-3"></i>
+                                <div>
+                                    <h4 class="font-medium text-gray-800">Support</h4>
+                                    <p class="text-gray-600 text-sm">24/7 customer service</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cart Sidebar -->
+    <div id="cart-sidebar" class="fixed top-0 right-0 h-full w-full md:w-96 bg-white shadow-lg transform translate-x-full transition-transform duration-300 z-50">
+        <div class="h-full flex flex-col">
+            <div class="p-4 border-b border-gray-200 flex justify-between items-center">
+                <h3 class="text-lg font-bold text-gray-800">Your Cart (3)</h3>
+                <button id="close-cart" class="text-gray-500 hover:text-gray-800">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <div class="flex-grow overflow-y-auto p-4">
+                <!-- Cart Item 1 -->
+                <div class="flex mb-4 pb-4 border-b border-gray-200">
+                    <div class="w-24 h-24 bg-gray-100 rounded-lg overflow-hidden mr-4">
+                        <img src="https://images.unsplash.com/photo-1599058917212-d750089bc07e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80" alt="Product" class="w-full h-full object-cover">
+                    </div>
+                    <div class="flex-grow">
+                        <div class="flex justify-between">
+                            <h4 class="font-medium text-gray-800">Premium Whey Protein</h4>
+                            <button class="text-gray-400 hover:text-red-500">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-1">Chocolate - 5 lbs</p>
+                        <div class="flex justify-between items-center">
+                            <div class="flex items-center border border-gray-300 rounded-lg">
+                                <button class="px-2 py-1 text-sm">-</button>
+                                <span class="px-2 py-1 border-x border-gray-300 text-sm">1</span>
+                                <button class="px-2 py-1 text-sm">+</button>
+                            </div>
+                            <span class="font-medium text-gray-800">$39.99</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Cart Item 2 -->
+                <div class="flex mb-4 pb-4 border-b border-gray-200">
+                    <div class="w-24 h-24 bg-gray-100 rounded-lg overflow-hidden mr-4">
+                        <img src="https://images.unsplash.com/photo-1542272604-787c3835535d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1526&q=80" alt="Product" class="w-full h-full object-cover">
+                    </div>
+                    <div class="flex-grow">
+                        <div class="flex justify-between">
+                            <h4 class="font-medium text-gray-800">High-Waist Yoga Pants</h4>
+                            <button class="text-gray-400 hover:text-red-500">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-1">Black - Medium</p>
+                        <div class="flex justify-between items-center">
+                            <div class="flex items-center border border-gray-300 rounded-lg">
+                                <button class="px-2 py-1 text-sm">-</button>
+                                <span class="px-2 py-1 border-x border-gray-300 text-sm">2</span>
+                                <button class="px-2 py-1 text-sm">+</button>
+                            </div>
+                            <span class="font-medium text-gray-800">$69.98</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Cart Item 3 -->
+                <div class="flex mb-4">
+                    <div class="w-24 h-24 bg-gray-100 rounded-lg overflow-hidden mr-4">
+                        <img src="https://images.unsplash.com/photo-1594737625785-a6cbbd98b239?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" alt="Product" class="w-full h-full object-cover">
+                    </div>
+                    <div class="flex-grow">
+                        <div class="flex justify-between">
+                            <h4 class="font-medium text-gray-800">Smart Fitness Tracker</h4>
+                            <button class="text-gray-400 hover:text-red-500">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-1">Black</p>
+                        <div class="flex justify-between items-center">
+                            <div class="flex items-center border border-gray-300 rounded-lg">
+                                <button class="px-2 py-1 text-sm">-</button>
+                                <span class="px-2 py-1 border-x border-gray-300 text-sm">1</span>
+                                <button class="px-2 py-1 text-sm">+</button>
+                            </div>
+                            <span class="font-medium text-gray-800">$59.99</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="p-4 border-t border-gray-200">
+                <div class="flex justify-between mb-2">
+                    <span class="text-gray-600">Subtotal</span>
+                    <span class="font-medium">$169.96</span>
+                </div>
+                <div class="flex justify-between mb-2">
+                    <span class="text-gray-600">Shipping</span>
+                    <span class="font-medium text-green-600">Free</span>
+                </div>
+                <div class="flex justify-between mb-4">
+                    <span class="text-gray-600">Tax</span>
+                    <span class="font-medium">$12.70</span>
+                </div>
+                <div class="flex justify-between text-lg font-bold mb-6">
+                    <span>Total</span>
+                    <span>$182.66</span>
+                </div>
+                <button class="bg-green-600 hover:bg-green-700 text-white font-medium py-3 px-6 rounded-lg w-full transition duration-300">
+                    Proceed to Checkout
+                </button>
+                <a href="#" class="block text-center text-green-600 hover:text-green-800 mt-2">Continue Shopping</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Product Modal
+        const productModal = document.getElementById('product-modal');
+        const closeModal = document.getElementById('close-modal');
+        const productCards = document.querySelectorAll('.product-card');
+        
+        productCards.forEach(card => {
+            card.addEventListener('click', () => {
+                productModal.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+            });
+        });
+        
+        closeModal.addEventListener('click', () => {
+            productModal.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        });
+        
+        // Cart Sidebar
+        const cartSidebar = document.getElementById('cart-sidebar');
+        const closeCart = document.getElementById('close-cart');
+        const cartButtons = document.querySelectorAll('[href="#"]'); // Simplified for demo
+        
+        cartButtons.forEach(button => {
+            if (button.querySelector('.fa-shopping-cart')) {
+                button.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    cartSidebar.classList.remove('translate-x-full');
+                    document.body.style.overflow = 'hidden';
+                });
+            }
+        });
+        
+        closeCart.addEventListener('click', () => {
+            cartSidebar.classList.add('translate-x-full');
+            document.body.style.overflow = 'auto';
+        });
+        
+        // Thumbnail image click in modal
+        const thumbnails = document.querySelectorAll('#product-modal .grid img:not(#modal-product-image)');
+        const mainImage = document.getElementById('modal-product-image');
+        
+        thumbnails.forEach(thumb => {
+            thumb.addEventListener('click', () => {
+                // Remove border from all thumbnails
+                thumbnails.forEach(t => t.classList.remove('border-green-500', 'border-2'));
+                thumbnails.forEach(t => t.classList.add('border-transparent'));
+                
+                // Add border to clicked thumbnail
+                thumb.classList.remove('border-transparent');
+                thumb.classList.add('border-green-500', 'border-2');
+                
+                // Change main image
+                mainImage.src = thumb.src;
+            });
+        });
+        
+        // Quantity buttons
+        const quantityMinusButtons = document.querySelectorAll('[class*="flex items-center border"] button:first-child');
+        const quantityPlusButtons = document.querySelectorAll('[class*="flex items-center border"] button:last-child');
+        const quantityValues = document.querySelectorAll('[class*="flex items-center border"] span');
+        
+        quantityMinusButtons.forEach((button, index) => {
+            button.addEventListener('click', (e) => {
+                e.preventDefault();
+                let value = parseInt(quantityValues[index].textContent);
+                if (value > 1) {
+                    quantityValues[index].textContent = value - 1;
+                }
+            });
+        });
+        
+        quantityPlusButtons.forEach((button, index) => {
+            button.addEventListener('click', (e) => {
+                e.preventDefault();
+                let value = parseInt(quantityValues[index].textContent);
+                quantityValues[index].textContent = value + 1;
+            });
+        });
+    </script>
+</body>
+</html>
